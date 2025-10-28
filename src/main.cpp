@@ -182,7 +182,7 @@ void saveProcessedWorker() {
 			std::string uniquename = oss.str();
 
 			fs::path filepath = outputDir / uniquename;
-			if (!stbi_write_jpg(filepath.string().c_str(), frame.width, frame.height, RGB_NUM_CHANNELS, frame.data.data(), OUTPUT_JPG_QUALITY)) {
+			if (!stbi_write_jpg(filepath.string().c_str(), frame.width, frame.height, RGB_NUM_CHANNELS, data, OUTPUT_JPG_QUALITY)) {
 				std::cerr << "Error saving file: " << filepath << '\n';
 				continue;
 			}
